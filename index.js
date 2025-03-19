@@ -13,20 +13,20 @@ const app = new express();
 app.use(express.json()); // For parsing JSON
 app.use(express.urlencoded({ extended: true })); // For parsing URL-encoded data
 
-// limitter middleware
-const limitter = rateLimit({
+// limiter middleware
+const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
   max: 100,
   standardHeaders: true,
-  legeacyHeaders: false,
+  legacyHeaders: false,
   message: "Too many requests from this IP, please try again after 10 minutes.",
 });
 
-app.use(limitter);
+app.use(limiter);
 
 // security middlewares
 app.use(helmet());
-app.use(cors()); // can add specfic frontend origins later
+app.use(cors()); // can add specific frontend origins later
 
 app.use(requestLogs); // request logger
 
