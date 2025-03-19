@@ -5,7 +5,7 @@ async function connectDb(path) {
     mongoose.connect(path);
     console.log(`DB connected ready to accept connections`);
   } catch (error) {
-    console.log(`Error encountered while connection to DB`);
+    console.log(`Error encountered while connecting to DB`);
   }
 }
 
