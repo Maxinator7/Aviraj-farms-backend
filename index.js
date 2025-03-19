@@ -18,7 +18,7 @@ const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
   max: 100,
   standardHeaders: true,
-  message: "Too many requests from this IP, please try again after 10 minutes.",
+  message: "Too many requests from this IP, please try again after 15 minutes.",
 });
 
 app.use(limiter);
